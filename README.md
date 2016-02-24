@@ -22,11 +22,11 @@ Or install it yourself as:
 ## Provides
 
 * Timing from instrumentation (total duration, db_runtime, view_runtime)
-* Pageview tracking on GETs
+* Pageview tracking
 * Tracker hook in controllers that can use a generated UUID request session `client_id`
-* Exception tracking (tracks only the exception name; not recommended for anything but stat-keeping)
+* Exception tracking (tracks the exception name and line/file if available)
 
-Session UUID for the `client_id` is handled for you. Can be overridden easily, see [Overriding the client_id](#overriding_the_client_id).
+Session UUID for the `client_id` is handled for you. Can be overridden easily, see [Overriding the client_id](https://github.com/tpitale/tremolo-rails#overriding-the-client_id).
 
 ## Usage
 
