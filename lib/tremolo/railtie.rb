@@ -16,11 +16,16 @@ module Tremolo
     end
 
     initializer "tremolo.build_trackers" do
+      default_options = {namespace: config.tremolo.namespace.to_s}
+
       config.tremolo.trackers.each do |args|
         # cheap way to detect a named tracker
         args.unshift(:default) unless args.first.is_a? Symbol
 
-        args << {namespace: config.tremolo.namespace}
+        options = args.pop if args.last.is_a? Hash
+        options ||= {}
+
+        args << default_options.merge(options)
 
         Tremolo.supervised_tracker(*args)
       end

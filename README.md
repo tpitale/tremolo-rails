@@ -63,6 +63,8 @@ Further options can be passed to the tracker as a hash in the last element of an
 config.tremolo.trackers << ['0.0.0.0', 4444, {namespace: 'website'}]
 ```
 
+**Note:** tracker-specific namespace options will override global `namespace` configuration.
+
 ## Overriding the client_id ##
 
 A method is added to your controller called `tremolo_client_id`. By default, it's implementation looks like:
