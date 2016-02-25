@@ -42,6 +42,10 @@ describe Tremolo::Subscribers::Timing do
       path: '/posts',
       hostname: 'domain.com',
       method: 'GET',
+      status: 200,
+      format: :html,
+      controller: 'posts',
+      action: 'index',
       client_id: client_id
     }
   }

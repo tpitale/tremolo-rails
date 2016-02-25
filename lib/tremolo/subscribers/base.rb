@@ -20,12 +20,36 @@ module Tremolo
           path: path,
           hostname: hostname,
           method: method,
+          format: format,
+          status: status,
+          controller: controller,
+          action: action,
           client_id: client_id
         }
       end
 
+      def format
+        payload[:format]
+      end
+
+      def status
+        payload[:status]
+      end
+
       def method
         payload[:method]
+      end
+
+      def action
+        params["action"]
+      end
+
+      def controller
+        params["controller"]
+      end
+
+      def params
+        payload[:params]
       end
 
       def path_prefix

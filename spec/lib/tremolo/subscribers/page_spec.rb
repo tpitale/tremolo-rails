@@ -24,6 +24,19 @@ describe Tremolo::Subscribers::Page do
     }
   }
 
+  let(:tags) {
+    {
+      path: '/posts',
+      hostname: 'domain.com',
+      method: 'GET',
+      status: 200,
+      format: :html,
+      controller: 'posts',
+      action: 'index',
+      client_id: client_id
+    }
+  }
+
   context "on a GET request" do
     let(:args) {
       [
@@ -43,7 +56,7 @@ describe Tremolo::Subscribers::Page do
     end
 
     it 'increments a pageview stat with tags' do
-      expect(tracker).to have_received(:increment).with('pageview', path: '/posts', hostname: 'domain.com', method: 'GET', client_id: client_id)
+      expect(tracker).to have_received(:increment).with('pageview', tags)
     end
   end
 
@@ -66,7 +79,7 @@ describe Tremolo::Subscribers::Page do
     end
 
     it 'increments a pageview stat with tags' do
-      expect(tracker).to have_received(:increment).with('pageview', path: '/posts', hostname: 'domain.com', method: 'POST', client_id: client_id)
+      expect(tracker).to have_received(:increment).with('pageview', tags.merge(method: 'POST'))
     end
   end
 
