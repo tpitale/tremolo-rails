@@ -107,10 +107,6 @@ config.tremolo.pageviews = false # stats: pageview
 config.tremolo.exceptions = false # default, stats: exception
 ```
 
-## TODO ##
-
-* Add controller and action to payload
-
 ## Contributing
 
 1. Fork it
