@@ -21,6 +21,9 @@ describe PostsController do
     it 'appends tracker to the notification payload' do
       payload = {}
 
+      # calling fetch without config results in a new NoopTracker each time
+      Tremolo.stubs(:fetch).returns('tracker')
+
       controller.append_info_to_payload(payload)
 
       expect(payload["tremolo.tracker"]).to eq(controller.tracker)
