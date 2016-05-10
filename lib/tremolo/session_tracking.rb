@@ -1,7 +1,7 @@
 module Tremolo
   module SessionTracking
     def tracker(key=:default)
-      @tracker ||= Tremolo.fetch(key)
+      Tremolo.fetch(key)
     end
 
     # load or set new uuid in session
