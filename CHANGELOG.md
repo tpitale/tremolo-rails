@@ -1,3 +1,9 @@
+## tremolo-rails 0.1.3 ##
+
+*   Do not memoize a tracker, it may be dead
+
+    *Tony Pitale*
+
 ## tremolo-rails 0.1.2 ##
 
 *   Fixes namespace handling in tracker configuration
